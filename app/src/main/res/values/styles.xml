@@ -1,0 +1,28 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="android:Theme.Light">
+    </style>
+
+    <style name="WidgetBackground">
+        <item name="android:background">@drawable/widget_bg</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Text.Small" parent="Text">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="Text.Medium" parent="Text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Big" parent="Text">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>
