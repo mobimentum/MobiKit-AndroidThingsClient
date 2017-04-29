@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="logo_width">410dp</dimen>
+    <dimen name="logo_height">177.33dp</dimen>
+
+    <dimen name="widget_size">200dp</dimen>
+
+</resources>
