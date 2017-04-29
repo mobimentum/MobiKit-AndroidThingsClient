@@ -3,4 +3,8 @@
 
     <string name="app_name">Hello, Android Things!</string>
 
+    <string name="lbl_temperature">Temperatura</string>
+    <string name="lbl_motion">Movimento</string>
+    <string name="lbl_relay">Relé</string>
+
 </resources>

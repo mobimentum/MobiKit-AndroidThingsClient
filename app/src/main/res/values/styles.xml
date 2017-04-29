@@ -20,6 +20,12 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Text.Label" parent="Text.Medium">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
     <style name="Text.Big" parent="Text">
         <item name="android:textSize">32sp</item>
         <item name="android:textStyle">bold</item>

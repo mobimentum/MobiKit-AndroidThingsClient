@@ -28,11 +28,45 @@
         tools:text="Log view" />
 
     <LinearLayout
+        android:id="@+id/labelsLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/logoImage"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_toStartOf="@+id/logText"
+        android:orientation="horizontal">
+
+        <TextView
+            style="@style/Text.Label"
+            android:layout_width="@dimen/widget_size"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/lbl_temperature" />
+
+        <TextView
+            style="@style/Text.Label"
+            android:layout_width="@dimen/widget_size"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/lbl_motion"
+            android:layout_marginStart="16dp" />
+
+        <TextView
+            style="@style/Text.Label"
+            android:layout_width="@dimen/widget_size"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/lbl_relay"
+            android:layout_marginStart="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/labelsLayout"
+        android:layout_marginEnd="16dp"
         android:layout_toStartOf="@+id/logText"
         android:orientation="horizontal">
 
