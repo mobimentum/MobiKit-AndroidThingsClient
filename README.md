@@ -1,32 +1,14 @@
-Android Things empty project template
-=====================================
+Hello, Android Things!
+======================
 
-Use this empty project as a template for your Android Things project.
+Un esempio di client MQTT su [Android Things](https://developer.android.com/things/index.html) realizzato da [Mobimentum](https://mobimentum.it/it/) per lo [School Maker Day 2017](http://www.schoolmakerday.it/registrazione/site/viewws?id=a_20).
 
-
-Pre-requisites
---------------
-
-- Android Things compatible board
-- Android Studio 2.2+
-
-
-Build and install
-=================
-
-On Android Studio, click on the "Run" button.
-
-If you prefer to run on the command line, type
-
-```bash
-./gradlew installDebug
-adb shell am start com.example.androidthings.myproject/.MainActivity
-```
+![Screenshot](https://raw.githubusercontent.com/mobimentum/MobiKit-AndroidThingsClient/master/screenshot.png)
 
 License
 -------
 
-Copyright 2016 The Android Open Source Project, Inc.
+Copyright 2016 Mobimentum Srl
 
 Licensed to the Apache Software Foundation (ASF) under one or more contributor
 license agreements.  See the NOTICE file distributed with this work for
