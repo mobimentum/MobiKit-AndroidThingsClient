@@ -38,6 +38,8 @@ public class RelayView extends FrameLayout {
         setBackgroundResource(R.drawable.widget_bg);
 
         mToggleButton = (ToggleButton) findViewById(R.id.relayBtn);
+
+        setRelayState(false);
     }
 
     public void setRelayState(boolean relayState) {

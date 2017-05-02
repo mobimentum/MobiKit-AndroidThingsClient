@@ -44,6 +44,8 @@ public class MotionView extends FrameLayout {
 
         // Cfr. https://github.com/biodunalfet/SlidingSquaresLoader
         mSlidingview = (SlidingSquareLoaderView) findViewById(R.id.bricksAnim);
+
+        setMotionState(false);
     }
 
     public void setMotionState(boolean value) {
