@@ -20,6 +20,7 @@ import it.mobimentum.helloandroidthings.ui.TemperatureView;
 import it.mobimentum.helloandroidthings.util.IpUtils;
 
 import static it.mobimentum.helloandroidthings.Config.LOG_MAX_LENGTH;
+import static it.mobimentum.helloandroidthings.Config.USE_MOCK_CLIENT;
 
 /**
  * @author Maurizio Pinotti.
@@ -59,8 +60,12 @@ public class MainActivity extends Activity implements MobiKit {
         mHandler = new Handler();
 
         // Init MQTT client
-//        mClient = new MobiKitClient(this); // real client
-        mClient = new MockClient(this); // fake client
+        if (USE_MOCK_CLIENT) {
+            mClient = new MockClient(this); // fake client
+        }
+        else {
+            mClient = new MobiKitClient(this); // real client
+        }
     }
 
     @Override

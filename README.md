@@ -5,6 +5,11 @@ Un esempio di client MQTT su [Android Things](https://developer.android.com/thin
 
 ![Screenshot](https://raw.githubusercontent.com/mobimentum/MobiKit-AndroidThingsClient/master/screenshot.png)
 
+HOWTO
+-----
+
+Apri con Android Studio, modifica i valori nella classe `Config`  premi Play!
+
 License
 -------
 
