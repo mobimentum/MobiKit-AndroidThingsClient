@@ -44,10 +44,10 @@ public class TemperatureView extends LinearLayout {
         mHumidityView = (TextView) findViewById(R.id.humidText);
     }
 
-    public void setTemperature(int humidity, float celsius, float fahrenheit) {
-        mCelsiusView.setText(String.valueOf(celsius) + "\u00B0C");
-        mFahrenheitView.setText(String.valueOf(fahrenheit) + "\u00B0F");
-        mHumidityView.setText(String.valueOf(humidity) + "%");
+    public void setTemperature(float humidity, float celsius, float fahrenheit) {
+        mCelsiusView.setText(String.format("%.1f", celsius) + "\u00B0C");
+        mFahrenheitView.setText(String.format("%.1f", fahrenheit) + "\u00B0F");
+        mHumidityView.setText(Math.round(humidity) + "%");
 
         if (celsius <= 0) {
             mThermometerView.setImageResource(R.drawable.lowest_blue);

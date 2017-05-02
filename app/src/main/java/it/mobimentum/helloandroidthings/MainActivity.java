@@ -10,6 +10,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import it.mobimentum.helloandroidthings.mqtt.AbstractMobiKitClient;
+import it.mobimentum.helloandroidthings.mqtt.MobiKitClient;
 import it.mobimentum.helloandroidthings.mqtt.MockClient;
 import it.mobimentum.helloandroidthings.ui.MotionView;
 import it.mobimentum.helloandroidthings.ui.RelayView;
@@ -47,8 +48,8 @@ public class MainActivity extends Activity implements MobiKit {
         mHandler = new Handler();
 
         // Init MQTT client
-//        mClient = new MobiKitClient(this); // real client
-        mClient = new MockClient(this); // fake client
+        mClient = new MobiKitClient(this); // real client
+//        mClient = new MockClient(this); // fake client
     }
 
     @Override
@@ -68,7 +69,7 @@ public class MainActivity extends Activity implements MobiKit {
     }
 
     @Override
-    public void setTemperatureData(final int humidity, final float celsius, final float fahrenheit) {
+    public void setTemperatureData(final float humidity, final float celsius, final float fahrenheit) {
         log("Valore temperatura: " + humidity + "% " + celsius + "ºC " + fahrenheit + "ºF");
 
         mHandler.post(new Runnable() {

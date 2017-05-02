@@ -80,7 +80,7 @@ public class MobiKitClient extends AbstractMobiKitClient {
                         else if (topic.contains("MOBIKIT-dht")) {
                             // Humidity|Temperature °C| Temperature °F| Heat index °C| Heat index °F
                             String[] values = messageString.split("\\|");
-                            int humidValue = Integer.parseInt(values[0]);
+                            float humidValue = Float.parseFloat(values[0]);
                             float celsiusValue = Float.parseFloat(values[1]);
                             float fahrValue = Float.parseFloat(values[2]);
 

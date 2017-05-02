@@ -7,7 +7,7 @@ package it.mobimentum.helloandroidthings;
 public interface MobiKit {
 
     // Data
-    void setTemperatureData(int humidity, float celsius, float fahrenheit);
+    void setTemperatureData(float humidity, float celsius, float fahrenheit);
     void setMotionState(boolean state);
     void setRelayState(boolean state);
 
