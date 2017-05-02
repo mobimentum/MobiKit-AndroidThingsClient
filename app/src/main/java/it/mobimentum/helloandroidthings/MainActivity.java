@@ -1,9 +1,11 @@
 package it.mobimentum.helloandroidthings;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
+import android.text.Html;
 import android.text.Selection;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -15,6 +17,9 @@ import it.mobimentum.helloandroidthings.mqtt.MockClient;
 import it.mobimentum.helloandroidthings.ui.MotionView;
 import it.mobimentum.helloandroidthings.ui.RelayView;
 import it.mobimentum.helloandroidthings.ui.TemperatureView;
+import it.mobimentum.helloandroidthings.util.IpUtils;
+
+import static it.mobimentum.helloandroidthings.Config.LOG_MAX_LENGTH;
 
 /**
  * @author Maurizio Pinotti.
@@ -25,7 +30,7 @@ public class MainActivity extends Activity implements MobiKit {
 
     private Handler mHandler;
 
-    private TextView mLogView;
+    private TextView mLogView, mInfoView;
     private TemperatureView mTemperatureView;
     private MotionView mMotionView;
     private RelayView mRelayView;
@@ -38,6 +43,12 @@ public class MainActivity extends Activity implements MobiKit {
 
         setContentView(R.layout.activity_main);
 
+        Log.i(TAG, "Smallest width: "+getResources().getConfiguration().smallestScreenWidthDp);
+
+        mInfoView = (TextView) findViewById(R.id.infoText);
+        mInfoView.setText(Html.fromHtml(String.format(getResources().getString(R.string.ip_address),
+                IpUtils.getIPAddress(true)), 0));
+
         mLogView = (TextView) findViewById(R.id.logText);
         mLogView.setMovementMethod(new ScrollingMovementMethod());
 
@@ -48,8 +59,8 @@ public class MainActivity extends Activity implements MobiKit {
         mHandler = new Handler();
 
         // Init MQTT client
-        mClient = new MobiKitClient(this); // real client
-//        mClient = new MockClient(this); // fake client
+//        mClient = new MobiKitClient(this); // real client
+        mClient = new MockClient(this); // fake client
     }
 
     @Override
@@ -106,15 +117,27 @@ public class MainActivity extends Activity implements MobiKit {
 
     @Override
     public void log(final String message) {
-        Log.i(TAG, message);
+        Log.d(TAG, message);
 
         mHandler.post(new Runnable() {
             @Override
             public void run() {
                 mLogView.append( message + "\n");
+//                Log.i(TAG, "Text length: "+mLogView.getText().length());
 
                 Editable editable = mLogView.getEditableText();
-                Selection.setSelection(editable, editable.length());
+                int length = editable.length();
+
+                if (length > LOG_MAX_LENGTH) {
+                    Log.i(TAG, "Trimming logs (length="+length+")...");
+
+                    mLogView.setText(editable.subSequence(length-LOG_MAX_LENGTH, length));
+
+                    editable = mLogView.getEditableText();
+                    length = editable.length();
+                }
+
+                Selection.setSelection(editable, length);
             }
         });
     }

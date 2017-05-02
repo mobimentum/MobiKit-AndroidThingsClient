@@ -3,7 +3,6 @@ package it.mobimentum.helloandroidthings;
 /**
  * @author Maurizio Pinotti
  */
-
 public interface MobiKit {
 
     // Data

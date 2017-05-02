@@ -3,6 +3,8 @@
 
     <string name="app_name">Hello, Android Things!</string>
 
+    <string name="ip_address">Indirizzo IP: %1$s</string>
+
     <string name="lbl_temperature">Temperatura</string>
     <string name="lbl_motion">Movimento</string>
     <string name="lbl_relay">Relé</string>

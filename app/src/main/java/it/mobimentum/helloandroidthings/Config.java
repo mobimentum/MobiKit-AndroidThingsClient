@@ -12,4 +12,6 @@ public class Config {
 //    public static final int QOS = 2; // Exactly once
 
     public static final String CLIENT_ID = "HelloAndroidThings";
+
+    public static final int LOG_MAX_LENGTH = 5000;
 }
